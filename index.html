@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>Amazing Events - Home</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark px-4">
+        <a class="navbar-brand" href="#">
+            <img class="nav-img" src="assets/images/amazing_brand.png" alt="Amazing Events logo">
+        </a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <i class="bi bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ms-auto column-gap-3 row-gap-2">
+                <li class="nav-item text-center">
+                    <a class="nav-link active rounded-2" href="#">Home</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link rounded-2" href="assets/pages/upcomingEvents.html">Upcoming Events</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link rounded-2" href="assets/pages/pastEvents.html">Past Events</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link rounded-2" href="assets/pages/contact.html">Contact</a>
+                </li>
+                <li class="nav-item text-center">
+                    <a class="nav-link rounded-2" href="assets/pages/stats.html">Stats</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <header class="container-fluid home-banner d-flex justify-content-center align-items-center">
+        <h1 class="text-uppercase fw-bold">
+            Home
+        </h1>
+    </header>
+    <form action="#" class="my-4 mx-5 d-flex flex-column row-gap-3">
+        <div class="d-flex">
+            <input class="search-input shadow-sm form-control me-2" type="search" placeholder="Search an event..." aria-label="Search">
+            <button class="btn search-btn shadow-sm" type="submit">
+                <i class="bi bi-search-heart fs-3"></i>
+            </button>
+        </div>
+        <div class="d-flex flex-column flex-wrap flex-md-row justify-content-center column-gap-4 row-gap-2">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category1" value="food-fair">
+                <label class="form-check-label" for="category1">Food Fair</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category2" value="museum">
+                <label class="form-check-label" for="category2">Museum</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category3" value="costume-party">
+                <label class="form-check-label" for="category3">Costume Party</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category4" value="music-concert">
+                <label class="form-check-label" for="category4">Music Concert</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category5" value="race">
+                <label class="form-check-label" for="category5">Race</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category6" value="book-exchange">
+                <label class="form-check-label" for="category6">Book Exchange</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="category7" value="cinema">
+                <label class="form-check-label" for="category7">Let's go to the cinema</label>
+            </div>
+        </div>
+    </form>
+    <section class="mx-4 d-flex flex-wrap justify-content-around align-items-center row-gap-5 column-gap-3">
+        <div class="card shadow card-events">
+            <img src="assets/images/food_fair.jpg" class="card-img-top" alt="Festival of the collectivities event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    Festival of the collectivities
+                </h3>
+                <p class="card-text">
+                    Enjoy your favorite dishes from different countries in a unique event for the whole family.
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $5
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow card-events">
+            <img src="assets/images/outing_to_the_museum.jpg" class="card-img-top" alt="Art Exhibition event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    Art Exhibition
+                </h3>
+                <p class="card-text">
+                    Let's go to the art museum for an incredible tour to learn about the largest dinosaurs.
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $15
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow card-events">
+            <img src="assets/images/costume_party.jpg" class="card-img-top" alt="Halloween Night event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    Halloween Night
+                </h3>
+                <p class="card-text">
+                    Come in your scariest costume character to win amazing prizes.
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $12
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow card-events">
+            <img src="assets/images/music_concert.jpg" class="card-img-top" alt="Metallica in concert event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    Metallica in concert
+                </h3>
+                <p class="card-text">
+                    The only concert of the most emblematic band in the world
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $150
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow card-events">
+            <img src="assets/images/marathon.jpg" class="card-img-top" alt="10K for life marathon event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    10K for life
+                </h3>
+                <p class="card-text">
+                    Come and exercise, improve your health and lifestyle.
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $3
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow card-events">
+            <img src="assets/images/books.jpg" class="card-img-top" alt="School Book Fair event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    School Book Fair
+                </h3>
+                <p class="card-text">
+                    Bring your unused school book and bring the one you need.
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $1
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow card-events">
+            <img src="assets/images/cinema.jpg" class="card-img-top" alt="Avengers event">
+            <div class="card-body text-center d-flex flex-column justify-content-between">
+                <h3 class="card-title fw-bold">
+                    Avengers
+                </h3>
+                <p class="card-text">
+                    Marvel's Avengers 3d premiere the start of an epic saga with your best superheroes
+                </p>
+                <div class="d-flex justify-content-around align-items-center">
+                    <span>
+                        Price: $250
+                    </span>
+                    <a href="assets/pages/details.html" class="btn fw-bold details">
+                        Details
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="mt-5 px-3 py-4 d-flex flex-column flex-sm-row row-gap-3 align-items-center justify-content-between">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link p-0 mx-3 rounded-1" href="#">
+                    <img class="social-icon rounded-2 shadow-sm" src="assets/images/instagram.png" alt="Instagram icon">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link p-0 mx-3 rounded-1" href="#">
+                    <img class="social-icon rounded-2 shadow-sm" src="assets/images/facebook.png" alt="Facebook icon">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link p-0 mx-3 rounded-1" href="#">
+                    <img class="social-icon rounded-2 shadow-sm" src="assets/images/whatsapp.png" alt="Whatsapp icon">
+                </a>
+            </li>
+        </ul>
+        <h4 class="mb-0 me-3 fw-bold">
+            Cohort 49
+        </h4>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

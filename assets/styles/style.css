@@ -1,0 +1,214 @@
+:root {
+    --main: #D90368;
+    --secondary: #FEC3DE;
+    --light: #F1E9DA;
+    --dark: #14000A;
+    --font: 'Lato', sans-serif;
+}
+
+body {
+    color: #14000A;
+    font-family: var(--font);
+}
+
+html {
+    height: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+nav, footer {
+    background-color: var(--light);
+}
+
+.bi-list {
+    color: var(--main);
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: var(--main);
+}
+
+.nav-link:hover {
+    background-color: var(--main);
+    color: var(--light);
+}
+
+.nav-img {
+    height: 3rem;
+}
+
+.active {
+    background-color: var(--main);
+}
+
+.navbar-dark {
+    --bs-navbar-color: var(--main);
+}
+
+.social-icon {
+    height: 2rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary);
+    color: var(--main);
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .contact-footer, .stats-footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .details-footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+    }
+}
+    
+
+/* Home */
+header {
+    height: 17rem;
+}
+
+.home-banner {
+    background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4)
+    ),
+    url('../images/optional_banner_2.jpg');
+    background-position: top;
+}
+
+header h1 {
+    color: var(--light);
+    font-size: 4rem;
+}
+
+.search-input:focus {
+    outline: 2px solid var(--main);
+    border: 1px solid var(--main);;
+}
+
+.card-img-top {
+    height: 10.7rem;
+    object-fit: cover;
+}
+
+.card {
+    border: 1px dashed var(--main);
+}
+
+.card-events {
+    width: 19rem;
+    height: 26rem;
+    background-color: var(--light);
+}
+
+.card-title {
+    color: var(--main);
+} 
+
+.details, .search-btn, .submit-btn {
+    background-color: var(--main);
+    color: var(--light);
+}
+
+/* Upcoming Events */
+.upcoming-banner {
+    background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.4)
+    ),
+    url('../images/optional_banner_1.jpg');
+    background-position: center;
+}
+
+/* Past Events */
+.past-banner {
+    background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+    ),
+    url('../images/optional_banner_3.jpg');
+    background-position: center;
+}
+
+/* Contact */
+.contact-banner {
+    background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4)
+    ),
+    url('../images/optional_banner_4.jpg');
+    background-position: top;
+}
+
+/* Stats */
+.stats-banner {
+    background:
+    linear-gradient(
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5)
+    ),
+    url('../images/optional_banner_5.jpg');
+    background-position: center;
+}
+
+table, th, td {
+    border: 1px solid var(--dark);
+    border-collapse: collapse;
+}
+
+.table-title {
+    --bs-table-bg: var(--main);
+    --bs-table-color: white;
+}
+
+.table-titles {
+    --bs-table-bg: var(--light);
+}
+
+/* Details */
+.details-bg {
+    background-color: var(--light);
+}
+
+.details-card {
+    max-width: 62.5rem;
+}
+
+.details-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.list-group {
+    --bs-list-group-border-color: none;
+}
+
+.list-group-item {
+    padding: 0.4rem 0;
+}
