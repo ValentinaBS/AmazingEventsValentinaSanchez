@@ -1,7 +1,6 @@
 :root {
     --main: #D90368;
-    --secondary: #FEC3DE;
-    --light: #F1E9DA;
+    --light: white;
     --dark: #14000A;
     --font: 'Lato', sans-serif;
 }
@@ -23,8 +22,13 @@ textarea {
     resize: none;
 }
 
-nav, footer {
+nav {
     background-color: var(--light);
+}
+
+footer {
+    background-color: var(--main);
+    color: var(--light);
 }
 
 .bi-list {
@@ -34,11 +38,12 @@ nav, footer {
 
 .nav-link {
     color: var(--main);
+    font-weight: bold;
 }
 
 .nav-link:hover {
     background-color: var(--main);
-    color: var(--light);
+    color: white;
 }
 
 .nav-img {
@@ -58,7 +63,7 @@ nav, footer {
 }
 
 .btn:hover {
-    background-color: var(--secondary);
+    border: 1px solid var(--main);
     color: var(--main);
 }
 
