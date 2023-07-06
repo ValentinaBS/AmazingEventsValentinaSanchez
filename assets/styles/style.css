@@ -1,12 +1,12 @@
 :root {
-    --main: #D90368;
-    --light: white;
-    --dark: #14000A;
+    --main: #002d89;
+    --light: #F1E9DA;
+    --dark: #000414;
     --font: 'Lato', sans-serif;
 }
 
 body {
-    color: #14000A;
+    color: var(--dark);
     font-family: var(--font);
 }
 
@@ -22,13 +22,8 @@ textarea {
     resize: none;
 }
 
-nav {
+nav, footer {
     background-color: var(--light);
-}
-
-footer {
-    background-color: var(--main);
-    color: var(--light);
 }
 
 .bi-list {
@@ -86,7 +81,16 @@ input[type="search"]::-webkit-search-cancel-button {
         bottom: 0px;
     }
 }
-    
+
+.form-check-input:checked {
+    background-color: var(--main);
+    border: 1px solid var(--dark);
+}
+
+.form-check-input:focus {
+    border-color: var(--dark);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset, 0px 0px 8px rgba(0, 45, 137, 0.8);
+}
 
 /* Home */
 header {
