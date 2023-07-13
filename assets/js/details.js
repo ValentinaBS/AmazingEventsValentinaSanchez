@@ -1,7 +1,7 @@
 const detailsContainer = document.getElementById("details-container");
 
 let urlParams = new URLSearchParams(location.search)
-let eventId = urlParams.get('eventId')
+let eventId = urlParams.get("eventId")
 
 let eventToPrint = data.events.find(eventObject => eventObject._id === eventId)
 
@@ -28,8 +28,8 @@ function printDetails(container, eventObject) {
                     <span class="fw-bold">Capacity: </span>${eventObject.capacity}
                 </li>
                 <li class="list-group-item">
-                    <span class="fw-bold">${eventObject['assistance'] ? 'Assistance: ' : 'Estimate: '}</span>
-                    ${eventObject['assistance'] ? eventObject.assistance : eventObject.estimate}
+                    <span class="fw-bold">${eventObject["assistance"] ? "Assistance: " : "Estimate: "}</span>
+                    ${eventObject["assistance"] ? eventObject.assistance : eventObject.estimate}
                 </li>
                 <li class="list-group-item">
                     <span class="fw-bold">Price: </span>$${eventObject.price}

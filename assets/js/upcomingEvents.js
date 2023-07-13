@@ -29,7 +29,7 @@ const checkboxContainer = document.getElementById("checkbox-container")
 const uniqueEventCategories = Array.from(new Set(data.events.map(event => event.category)))
 
 function filterCheckboxCategories(events){
-    const checkedCheckbox =  Array.from(document.querySelectorAll('input[type=checkbox]:checked')).map(check => check.value)
+    const checkedCheckbox =  Array.from(document.querySelectorAll("input[type=checkbox]:checked")).map(check => check.value)
     const filteredResult = events.filter(event => checkedCheckbox.includes(event.category))
 
     if(checkedCheckbox.length === 0) {
