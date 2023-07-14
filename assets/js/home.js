@@ -1,5 +1,4 @@
 const cardsContainer = document.getElementById("cards-container");
-const searchInput = document.querySelector(".search-input");
 
 // submit search value
 const form = document.getElementById("form")
