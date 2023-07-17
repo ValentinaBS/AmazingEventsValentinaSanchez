@@ -65,7 +65,7 @@ function createCard(obj) {
     return `
     <div class="card shadow card-events">
         <img src="${obj.image}" class="card-img-top" alt="${obj.name} event">
-        <div class="card-body text-center d-flex flex-column justify-content-between">
+        <div class="card-body text-center d-flex flex-column justify-content-between my-1">
             <h3 class="card-title fw-bold">
                 ${obj.name}
             </h3>
@@ -100,14 +100,8 @@ printCards(data.events, data.currentDate, cardsContainer)
 
 // clean element
 const clearButton = document.querySelector(".clear-btn")
-const clearButtonMobile = document.querySelector(".clear-btn-mobile")
 
 clearButton.addEventListener("click", () => {
-    emptyElement(cardsContainer)
-    printCards(data.events, data.currentDate, cardsContainer)
-})
-
-clearButtonMobile.addEventListener("click", () => {
     emptyElement(cardsContainer)
     printCards(data.events, data.currentDate, cardsContainer)
 })

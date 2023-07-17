@@ -1,5 +1,18 @@
 const cardsContainer = document.getElementById("cards-container");
 
+let allEvents;
+
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+    .then(res => res.json())
+    .then(data => {
+        allEvents = data.events;
+        const uniqueEventCategories = Array.from(new Set(allEvents.map(event => event.category)))
+        
+        printCards(allEvents, cardsContainer)
+        printCheckboxes(uniqueEventCategories, checkboxContainer)
+    })
+    .catch(error => console.error(error))
+
 // submit search value
 const form = document.getElementById("form")
 
@@ -13,7 +26,7 @@ form.addEventListener("submit", (e) => {
 })
 
 function filterAndPrintCards(searchInput) {
-    const filteredEventsSearch = data.events.filter(event => event.name.toLowerCase().includes(searchInput.toLowerCase()))
+    const filteredEventsSearch = allEvents.filter(event => event.name.toLowerCase().includes(searchInput.toLowerCase()))
     const filteredEventsAll = filterCheckboxCategories(filteredEventsSearch);
     printCards(filteredEventsAll, cardsContainer);
 
@@ -26,7 +39,6 @@ function filterAndPrintCards(searchInput) {
 
 // checkbox functions
 const checkboxContainer = document.getElementById("checkbox-container")
-const uniqueEventCategories = Array.from(new Set(data.events.map(event => event.category)))
 
 function filterCheckboxCategories(events){
     const checkedCheckbox =  Array.from(document.querySelectorAll("input[type=checkbox]:checked")).map(check => check.value)
@@ -58,14 +70,12 @@ function printCheckboxes(categories, container) {
     container.innerHTML += template
 }
 
-printCheckboxes(uniqueEventCategories, checkboxContainer)
-
 // card functions
 function createCard(obj) {
     return `
     <div class="card shadow card-events">
         <img src="${obj.image}" class="card-img-top" alt="${obj.name} event">
-        <div class="card-body text-center d-flex flex-column justify-content-between">
+        <div class="card-body text-center d-flex flex-column justify-content-between my-1">
             <h3 class="card-title fw-bold">
                 ${obj.name}
             </h3>
@@ -95,20 +105,12 @@ function printCards(events, container) {
     container.innerHTML += template;
 }
 
-printCards(data.events, cardsContainer)
-
 // clear element
 const clearButton = document.querySelector(".clear-btn")
-const clearButtonMobile = document.querySelector(".clear-btn-mobile")
 
 clearButton.addEventListener("click", () => {
     emptyElement(cardsContainer)
-    printCards(data.events, cardsContainer)
-})
-
-clearButtonMobile.addEventListener("click", () => {
-    emptyElement(cardsContainer)
-    printCards(data.events, cardsContainer)
+    printCards(allEvents, cardsContainer)
 })
 
 function emptyElement(element){
