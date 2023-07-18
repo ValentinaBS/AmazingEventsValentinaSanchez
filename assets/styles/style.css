@@ -62,10 +62,6 @@ nav, footer {
     color: var(--main);
 }
 
-.clear-btn, .search-btn {
-    width: 50%;
-}
-
 .clear-btn {
     border: 1px solid var(--main);
     color: var(--main);
