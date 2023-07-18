@@ -213,6 +213,10 @@ table, th, td {
     --bs-table-bg: var(--light);
 }
 
+.col-width {
+    width: 33%;
+}
+
 /* Details */
 .details-bg {
     background-color: var(--light);

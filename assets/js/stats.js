@@ -4,6 +4,8 @@ const largestCapacityContainer = document.getElementById("largest-capacity");
 const upcomingRows = document.getElementById("upcoming-rows");
 const pastRows = document.getElementById("past-rows");
 
+let allEvents;
+
 fetch("https://mindhub-xj03.onrender.com/api/amazing")
     .then(res => res.json())
     .then(data => {
@@ -15,8 +17,9 @@ fetch("https://mindhub-xj03.onrender.com/api/amazing")
 
         sortEvents(filteredPastEvents);
         sortEvents(filteredUpcomingEvents);
-        
-        printGeneralStatistics(allEvents)
+
+        printAssistance(filteredPastEvents)
+        printLargestCapacity(allEvents)
         printRows(filteredUpcomingEvents, upcomingRows)
         printRows(filteredPastEvents, pastRows)
     })
@@ -26,58 +29,83 @@ function sortEvents(events) {
     events.sort((a, b) => a.category.localeCompare(b.category));
 }
 
-function printGeneralStatistics(events) {
+// Table 1
+function printAssistance(events) {
     let lowestPercentage = 100;
     let highestPercentage = 0;
-    let largestCapacity = 0;
-    let highestEvent;
-    let lowestEvent;
-    let largestEvent;
+    let highestEvent, lowestEvent;
 
     for (let event of events) {
         let percentage = event.assistance
-            ? Math.round((event.assistance / event.capacity) * 100)
-            : Math.round((event.estimate / event.capacity) * 100);
-        let capacity = event.capacity
+            ? (event.assistance / event.capacity) * 100
+            : (event.estimate / event.capacity) * 100;
 
         if (percentage > highestPercentage) {
             highestPercentage = percentage;
             highestEvent = event.name;
-        } 
+        }
         if (percentage < lowestPercentage) {
             lowestPercentage = percentage;
             lowestEvent = event.name;
         }
-        if (capacity > largestCapacity) {
-            largestCapacity = capacity;
-            largestEvent = event.name;
-        } 
     }
 
-    highestAssistanceContainer.textContent = `${highestEvent} - ${highestPercentage}%`;
-    lowestAssistanceContainer.textContent = `${lowestEvent} - ${lowestPercentage}%`;
-    largestCapacityContainer.textContent = `${largestEvent} - ${largestCapacity} people`;
+    highestAssistanceContainer.textContent = `${highestEvent} - ${highestPercentage.toFixed(2)}%`;
+    lowestAssistanceContainer.textContent = `${lowestEvent} - ${lowestPercentage.toFixed(2)}%`;
 }
 
+function printLargestCapacity(events) {
+    let orderByCapacity = events.sort((a, b) => b.capacity - a.capacity)
+    let largestEvent = orderByCapacity[0].name;
+    let largestCapacity = orderByCapacity[0].capacity;
+
+    largestCapacityContainer.textContent = `${largestEvent} - ${largestCapacity.toLocaleString("en-EN")} people`;
+}
+
+// Table 2 & 3
 function createRow(stats) {
-    let assistanceOrEstimate = stats.assistance || stats.estimate;
-    let assistanceOrEstimatePercentage = Math.round((assistanceOrEstimate / stats.capacity) * 100);
+    let percentage = ((stats.assistance / stats.capacity) * 100).toFixed(2);
 
     return `
     <tr>
         <td>${stats.category}</td>
-        <td>$${(stats.price * assistanceOrEstimate).toLocaleString("en-EN")}</td>
-        <td>${assistanceOrEstimatePercentage}%</td>
+        <td>$${(stats.price * stats.assistance).toLocaleString("en-EN")}</td>
+        <td>${percentage}%</td>
     </tr>
     `
 }
 
 function printRows(events, container) {
+    const unifiedEvents = unifyCategoryEvents(events);
+
     let template = "";
 
-    for (let event of events) {
-        template += createRow(event)
+    for (let category of unifiedEvents) {
+        template += createRow(category);
     }
 
     container.innerHTML += template;
+}
+
+function unifyCategoryEvents(events) {
+    const unifiedEvents = events.reduce((result, event) => {
+        const existingEvent = result.find(item => item.category === event.category);
+
+        if (existingEvent) {
+            existingEvent.price += event.price;
+            existingEvent.assistance += event.assistance || event.estimate;
+            existingEvent.capacity += event.capacity;
+        } else {
+            result.push({
+                category: event.category,
+                price: event.price,
+                assistance: event.assistance || event.estimate,
+                capacity: event.capacity
+            });
+        }
+
+        return result;
+    }, []);
+
+    return unifiedEvents;
 }
