@@ -9,7 +9,7 @@ let allEvents;
 fetch("https://mindhub-xj03.onrender.com/api/amazing")
     .then(res => res.json())
     .then(data => {
-        let allEvents = data.events;
+        allEvents = data.events;
         let currentDate = data.currentDate;
 
         let filteredPastEvents = allEvents.filter(event => event.date < currentDate);
@@ -36,9 +36,7 @@ function printAssistance(events) {
     let highestEvent, lowestEvent;
 
     for (let event of events) {
-        let percentage = event.assistance
-            ? (event.assistance / event.capacity) * 100
-            : (event.estimate / event.capacity) * 100;
+        let percentage = event.assistance / event.capacity * 100;
 
         if (percentage > highestPercentage) {
             highestPercentage = percentage;
