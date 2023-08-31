@@ -1,9 +1,16 @@
 const detailsContainer = document.getElementById("details-container");
 
+fetch("https://mindhub-xj03.onrender.com/api/amazing")
+    .then(res => res.json())
+    .then(data => {
+        allEvents = data.events;
+        let eventToPrint = allEvents.find(eventObject => eventObject._id == eventId)
+        printDetails(detailsContainer, eventToPrint)
+    })
+    .catch(error => console.error(error))
+
 let urlParams = new URLSearchParams(location.search)
 let eventId = urlParams.get("eventId")
-
-let eventToPrint = data.events.find(eventObject => eventObject._id === eventId)
 
 function printDetails(container, eventObject) {
     container.innerHTML = `
@@ -39,5 +46,3 @@ function printDetails(container, eventObject) {
     </div>
     `
 }
-
-printDetails(detailsContainer, eventToPrint)
